@@ -70,7 +70,7 @@
 							</ul>
 						</footer>
 
-						<p><a href="tel:+41797626865">+41 79 762 68 65</a><br/><a href="mailto:johanatnexys.io">johan [@] nexys.io</a></p>
+						<p><a href="tel:+41797626865">+41 79 762 68 65</a><br/><a data-gen-email href="#">johan [@] nexys.io</a></p>
 					</section>
 
 				<!-- Footer -->
@@ -91,4 +91,16 @@
 			</script>
 
 	</body>
+
+	<script>
+	// https://stackoverflow.com/questions/3624667/how-to-spamproof-a-mailto-link
+	// The string is your base64-encoded email
+		const emailAddress = atob("bWFpbHRvOmpvaGFuQG5leHlzLmlv");
+		
+		// Select all links with the attribute 'data-gen-email'
+		const emailLinks = document.querySelectorAll('[data-gen-email]');
+		
+		emailLinks.forEach(link => {
+				link.onmouseover = link.ontouchstart = () => link.setAttribute('href', emailAddress);
+		});</script>
 </html>
