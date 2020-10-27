@@ -94,8 +94,8 @@
 
 	<script>
 	// https://stackoverflow.com/questions/3624667/how-to-spamproof-a-mailto-link
-	// The string is your base64-encoded email
-		const emailAddress = atob("bWFpbHRvOmpvaGFuQG5leHlzLmlv");
+	// The string is your base64-encoded email // btoa('xxx')
+		const emailAddress = atob("bWFpbHRvOmpvaGFuQG5leHlzLmNo");
 		
 		// Select all links with the attribute 'data-gen-email'
 		const emailLinks = document.querySelectorAll('[data-gen-email]');
