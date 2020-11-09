@@ -1,0 +1,9 @@
+export interface Data {
+  name: string;
+  title: string;
+  phone: string;
+  picture: { src: string };
+  email: string;
+  links: { href: string; icon: string; name: string }[];
+  linksFooter: { href: string; icon: string }[];
+}
