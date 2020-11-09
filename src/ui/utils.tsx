@@ -21,8 +21,10 @@ export const Header = ({
 };
 
 export const Phone = ({ phone }: { phone: string }) => {
-  const sanitized = phone.replace(/[\s+]/g, "");
+  // replace all but digits or `+`
+  const sanitized = phone.replace(/[^0-9+]/g, "");
   const href = `tel:${sanitized}`;
+
   return <a href={href}>{phone}</a>;
 };
 
