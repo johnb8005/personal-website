@@ -27,7 +27,7 @@ export const Phone = ({ phone }: { phone: string }) => {
 };
 
 export const Email = ({ email }: { email: string }) => {
-  const print = email.replace(/@/g, " [a] ");
+  const print = email.replace(/@/g, " [@] ");
   const href = `mailto:${email}`;
 
   return <a href={href}>{print}</a>;
