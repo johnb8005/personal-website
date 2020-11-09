@@ -10,7 +10,7 @@ const isData = (d: any): d is T.Data => {
  */
 export const toParam = (d: T.Data) => btoa(JSON.stringify(d));
 
-const getDataFromParam = (): T.Data => {
+export const getDataFromParam = (): T.Data => {
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get("data");
 
@@ -26,5 +26,3 @@ const getDataFromParam = (): T.Data => {
 
   return d;
 };
-
-export default getDataFromParam();
