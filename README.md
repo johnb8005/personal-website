@@ -1,5 +1,7 @@
 # Identity
 
+Generate your at: https://johnb8005.github.io/personal-website-admin/app/dashboard
+
 ## Resources
 
 - generating favicon from font awesome: https://gauger.io/fonticon/
