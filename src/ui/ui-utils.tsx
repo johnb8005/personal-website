@@ -20,21 +20,6 @@ export const Header = ({
   );
 };
 
-export const Phone = ({ phone }: { phone: string }) => {
-  // replace all but digits or `+`
-  const sanitized = phone.replace(/[^0-9+]/g, "");
-  const href = `tel:${sanitized}`;
-
-  return <a href={href}>{phone}</a>;
-};
-
-export const Email = ({ email }: { email: string }) => {
-  const print = email.replace(/@/g, " [@] ");
-  const href = `mailto:${email}`;
-
-  return <a href={href}>{print}</a>;
-};
-
 export const Footer = ({ name }: { name: string }) => {
   return (
     <footer id="footer">

@@ -1,7 +1,9 @@
 import React from "react";
 
 import * as T from "../type";
-import * as UI from "./utils";
+import * as UI from "./ui-utils";
+import Phone from "./phone";
+import Email from "./email";
 
 const UIMain = ({ data }: { data: T.Data }) => {
   document.title = data.name;
@@ -22,9 +24,9 @@ const UIMain = ({ data }: { data: T.Data }) => {
         </footer>
 
         <p>
-          <UI.Phone phone={data.phone} />
+          <Phone phone={data.phone} />
           <br />
-          <UI.Email email={data.email} />
+          <Email email={data.email} />
           <br />
 
           {data.linksFooter.map((f, i) => (
