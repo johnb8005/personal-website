@@ -10,7 +10,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "snowpack dev --polyfill-node",
+    "start": "SNOWPACK_PUBLIC_URL= snowpack dev --polyfill-node",
     "build": "snowpack build --polyfill-node",
     "test": "echo \"todo\""
   },
