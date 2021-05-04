@@ -18,7 +18,11 @@ export const Footer = ({name}) => {
     className: "copyright"
   }, /* @__PURE__ */ React.createElement("li", null, "© ", name)), /* @__PURE__ */ React.createElement("ul", {
     className: "copyright"
-  }, /* @__PURE__ */ React.createElement("li", null, "Design: ", /* @__PURE__ */ React.createElement("a", {
+  }, /* @__PURE__ */ React.createElement("li", null, "Source:", " ", /* @__PURE__ */ React.createElement("a", {
+    href: "https://github.com/johnb8005/personal-website"
+  }, /* @__PURE__ */ React.createElement("i", {
+    className: "icon solid fa-code"
+  }))), /* @__PURE__ */ React.createElement("li", null, "Design: ", /* @__PURE__ */ React.createElement("a", {
     href: "http://html5up.net"
   }, "HTML5 UP"))));
 };
