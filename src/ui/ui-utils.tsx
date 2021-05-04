@@ -27,12 +27,12 @@ export const Footer = ({ name }: { name: string }) => {
         <li>&copy; {name}</li>
       </ul>
       <ul className="copyright">
-        {/*<li>
+        <li>
           Source:{" "}
           <a href="https://github.com/johnb8005/personal-website">
             <i className="icon solid fa-code"></i>
           </a>
-        </li>*/}
+        </li>
         <li>
           Design: <a href="http://html5up.net">HTML5 UP</a>
         </li>
