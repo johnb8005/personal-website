@@ -1,6 +1,6 @@
 import React from "../_snowpack/pkg/react.js";
 import * as UI from "./ui-utils.js";
-import Phone from "./phone.js";
+import Phone from "./phone/index.js";
 import Email from "./email.js";
 const UIMain = ({data}) => {
   document.title = data.name;
@@ -18,7 +18,8 @@ const UIMain = ({data}) => {
     href: l.href,
     className: `icon ${l.icon}`
   }, l.name))))), /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement(Phone, {
-    phone: data.phone
+    phone: data.phone,
+    telegram: data.telegram
   }), /* @__PURE__ */ React.createElement("br", null), /* @__PURE__ */ React.createElement(Email, {
     email: data.email
   }), /* @__PURE__ */ React.createElement("br", null), data.linksFooter.map((f, i) => /* @__PURE__ */ React.createElement("span", {
