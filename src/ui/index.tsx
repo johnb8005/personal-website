@@ -24,7 +24,7 @@ const UIMain = ({ data }: { data: T.Data }) => {
         </footer>
 
         <p>
-          <Phone phone={data.phone} />
+          <Phone phone={data.phone} telegram={data.telegram} />
           <br />
           <Email email={data.email} />
           <br />
