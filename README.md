@@ -1,5 +1,8 @@
 # Identity
 
+[![Test and build project](https://github.com/johnb8005/personal-website/actions/workflows/test.yml/badge.svg)](https://github.com/johnb8005/personal-website/actions/workflows/test.yml)
+[![Deployment](https://github.com/johnb8005/personal-website/actions/workflows/deploy.yml/badge.svg)](https://github.com/johnb8005/personal-website/actions/workflows/deploy.yml)
+
 Generate your at: https://johnb8005.github.io/personal-website-admin/app/dashboard
 
 ## Resources

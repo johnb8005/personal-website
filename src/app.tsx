@@ -15,7 +15,7 @@ function App() {
         </p>
 
         <small>
-          <pre>{err.message}</pre>
+          <pre>{(err as Error).message}</pre>
         </small>
       </>
     );
