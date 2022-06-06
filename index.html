@@ -12,20 +12,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link rel="stylesheet" href="%SNOWPACK_PUBLIC_URL%/css/main.css" />
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="%SNOWPACK_PUBLIC_URL%/favicon.ico"
-    />
-    <noscript>
-      <link rel="stylesheet" href="%SNOWPACK_PUBLIC_URL%/css/noscript.css"
-    /></noscript>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body class="is-preload">
-    <!-- Wrapper -->
     <div id="wrapper"></div>
-
     <!-- Scripts -->
     <script>
       if ("addEventListener" in window) {
@@ -40,7 +31,6 @@
           : "";
       }
     </script>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
-
-  <script type="module" src="%SNOWPACK_PUBLIC_URL%/index.js"></script>
 </html>
