@@ -8,7 +8,6 @@ const Footer = ({ name }: { name: string }) => (
     </ul>
     <ul className="copyright">
       <li>
-        Source:{" "}
         <a href={C.ghUrl}>
           <i className="icon solid fa-code"></i>
         </a>
@@ -18,7 +17,9 @@ const Footer = ({ name }: { name: string }) => (
         </small>
       </li>
       <li>
-        Design: <a href="http://html5up.net">HTML5 UP</a>
+        <small>
+          Design: <a href="http://html5up.net">HTML5 UP</a>
+        </small>
       </li>
     </ul>
   </footer>
