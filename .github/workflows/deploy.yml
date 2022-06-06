@@ -1,12 +1,13 @@
 name: Deployment
+
 on:
   push:
-    branches:
-      - master
+    tags:
+      - v*
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -19,7 +20,7 @@ jobs:
       - name: Install Packages
         run: yarn
       - name: Build page
-        run: VITE_GIT_SHA=$GITHUB_SHA yarn build
+        run: VITE_GIT_SHA=$GITHUB_SHA VITE_VERSION=${GITHUB_REF##*/} yarn build
       - name: add 404
         run: cp dist/index.html dist/404.html
       - name: Deploy to gh-pages

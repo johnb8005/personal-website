@@ -1,7 +1,8 @@
 import React from "react";
 
 import * as T from "../type";
-import * as UI from "./ui-utils";
+import Header from "./header";
+import Footer from "./footer";
 import Phone from "./phone";
 import Email from "./email";
 
@@ -10,7 +11,7 @@ const UIMain = ({ data }: { data: T.Data }) => {
   return (
     <>
       <section id="main">
-        <UI.Header name={data.name} title={data.title} picture={data.picture} />
+        <Header name={data.name} title={data.title} picture={data.picture} />
         <footer>
           <ul className="icons">
             {data.links.map((l, i) => (
@@ -24,7 +25,7 @@ const UIMain = ({ data }: { data: T.Data }) => {
         </footer>
 
         <p>
-          <Phone phone={data.phone} />
+          <Phone phone={data.phone} telegram={data.telegram} />
           <br />
           <Email email={data.email} />
           <br />
@@ -40,7 +41,7 @@ const UIMain = ({ data }: { data: T.Data }) => {
         </p>
       </section>
 
-      <UI.Footer name={data.name} />
+      <Footer name={data.name} />
     </>
   );
 };
