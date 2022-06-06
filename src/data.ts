@@ -26,8 +26,6 @@ export const getDataFromParam = (): T.Data => {
 
   const d = JSON.parse(atob(sanitizeParam(myParam)));
 
-  console.log(typeof d);
-
   if (!isData(d)) {
     throw Error("param could not be read");
   }
