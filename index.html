@@ -1,36 +1,184 @@
 <!DOCTYPE html>
-<!--
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<html lang="en">
   <head>
-    <title>Personal Identity</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  </head>
-  <body class="is-preload">
-    <div id="wrapper"></div>
-    <!-- Scripts -->
-    <script>
-      if ("addEventListener" in window) {
-        window.addEventListener("load", function () {
-          document.body.className = document.body.className.replace(
-            /\bis-preload\b/,
-            ""
-          );
-        });
-        document.body.className += navigator.userAgent.match(/(MSIE|rv:11\.0)/)
-          ? " is-ie"
-          : "";
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Johan Boissard - Visionary IT Architect & Founder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
       }
+      .gradient-text {
+        background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .card-swing:hover {
+        animation: swing 0.5s ease-in-out;
+      }
+      @keyframes swing {
+        20% {
+          transform: rotate(15deg);
+        }
+        40% {
+          transform: rotate(-10deg);
+        }
+        60% {
+          transform: rotate(5deg);
+        }
+        80% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-gray-900 to-blue-900 min-h-screen flex items-center justify-center p-5">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const profileData = {
+        name: "Johan Boissard",
+        title: "IT Architect & Founder",
+        description: "Driving Technological Excellence",
+        longDescription:
+          "Leveraging a deep passion for innovation and a solid foundation in IT architecture, I specialize in creating sophisticated solutions that align technology with business goals. With a proven track record in entrepreneurship and a commitment to excellence, I turn visionary ideas into impactful realities.",
+        image:
+          "https://media.licdn.com/dms/image/D4E03AQFmjPg1g-z2gg/profile-displayphoto-shrink_400_400/0/1686758691009?e=1727913600&v=beta&t=KRYFen8uvX0BkTMwZP8Q5yj1ZeEwOTqdZkzjVtTITlo",
+        phone: "+41 79 762 68 65",
+        whatsapp: true,
+        email: "johan@nexys.ch",
+        skills: [
+          { icon: "fas fa-code", name: "Full-Stack Dev", color: "blue" },
+          { icon: "fas fa-cloud", name: "Cloud Expert", color: "purple" },
+          {
+            icon: "fas fa-project-diagram",
+            name: "System Design",
+            color: "green",
+          },
+          {
+            icon: "fas fa-users-cog",
+            name: "Team Leadership",
+            color: "yellow",
+          },
+        ],
+        socialLinks: [
+          {
+            icon: "far fa-calendar-alt",
+            url: "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1x35jTkfNeWWUx3t59Zb3ijIoMhsOIyUXEoFCkjDu6PXFGZtMMUAL-5PfW7zBn2PX94LT7kQ21?gv=true",
+          },
+          {
+            icon: "fab fa-linkedin",
+            url: "https://www.linkedin.com/in/johanboissard/",
+          },
+          { icon: "fab fa-github", url: "https://github.com/johnb8005" },
+          { icon: "fab fa-twitter", url: "https://x.com/johanboissard" },
+          { icon: "fas fa-briefcase", url: "https://usealbatross.ai" },
+        ],
+      };
+
+      const formatPhone = (p) => p.replace(/\s/g, "");
+
+      function ProfileCard({ data }) {
+        const phoneLink = data.whatsapp
+          ? "https://wa.me/" + formatPhone(data.phone)
+          : "tel:" + formatPhone(data.phone);
+
+        return (
+          <div className="max-w-4xl w-full bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden">
+            <div className="md:flex">
+              <div className="md:w-1/2 p-8">
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-75 blur"></div>
+                  <img
+                    src={data.image}
+                    alt={data.name}
+                    className="relative rounded-full w-48 h-48 object-cover mx-auto border-4 border-white shadow-xl"
+                  />
+                </div>
+                <h1 className="text-4xl font-bold text-white text-center mb-2">
+                  {data.name}
+                </h1>
+                <p className="text-xl text-blue-300 text-center mb-6">
+                  {data.title}
+                </p>
+                <div className="flex justify-center space-x-4 mb-8">
+                  {data.socialLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      className="text-blue-300 hover:text-white transition-colors duration-300">
+                      <i className={`${link.icon} fa-2x`}></i>
+                    </a>
+                  ))}
+                </div>
+                <div className="space-y-4 text-gray-300">
+                  <div className="flex items-center">
+                    <a href={phoneLink}>
+                      <i className="fab fa-whatsapp hover:text-green-600 text-green-400 mr-3"></i>
+                    </a>
+
+                    <p>
+                      <a href={phoneLink}>{data.phone}</a>
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="far fa-envelope text-blue-400 mr-3"></i>
+                    <a
+                      href={`mailto:${data.email}`}
+                      className="hover:text-white transition-colors duration-300">
+                      {data.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="md:w-1/2 bg-white p-8 flex flex-col justify-center">
+                <h2 className="text-3xl font-bold mb-6 gradient-text">
+                  {data.description}
+                </h2>
+                <p className="text-gray-600 mb-6">{data.longDescription}</p>
+                <div className="grid grid-cols-2 gap-4">
+                  {data.skills.map((skill, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-100 p-4 rounded-lg card-swing">
+                      <i
+                        className={`${skill.icon} text-4xl text-${skill.color}-500 mb-2`}></i>
+                      <h3 className="font-semibold text-gray-800">
+                        {skill.name}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <ProfileCard data={profileData} />
+            <footer className="fixed bottom-4 right-4 text-sm text-gray-400">
+              © {new Date().getFullYear()}
+            </footer>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
-    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
